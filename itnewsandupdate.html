@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Current IT Updates</title>
+ <link rel="stylesheet" href="style.css">
+  
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f4f4;
+      color: #222;
+    }
+
+    header {
+      background: #2c3e50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .news-container {
+      max-width: 300px;
+      margin: 40px auto;
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      text-align: center;
+      min-height: 200px;
+    }
+
+    .news-container h2 {
+      margin-bottom: 15px;
+      font-size: 24px;
+      color: #2c3e50;
+    }
+
+    .news-item {
+      display: none;
+      font-size: 18px;
+      animation: fade 1s ease-in-out;
+    }
+
+    .news-item.active {
+      display: block;
+    }
+
+    @keyframes fade {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
+      background: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+
+    /* Center reading section */
+    .container1 {
+      text-align: center;
+      margin: 40px auto;
+    }
+
+    iframe {
+      display: block;
+      margin: 20px auto;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Computer Science And Technology</h1>
+    <p>&copy; 2025 edunextgen Computer Classes</p>
+<nav>
+   <a href="index.html">Home</a>
+  <a href="courses.html">Courses</a>
+  <a href="about_ict.html">About Computer    Science</a>
+  <a href="itnewsandupdate.html">It News and Update</a>
+  <a href="gallery.html">Gallery and Media</a>
+  <a href="about_us.html">About us</a>
+  <a href="contact.html">Contact</a>
+  <a href="register.html">Register</a>
+  <a href="faqchatbot.html">FAQ ChatBot</a>
+
+</nav>
+
+
+  </header>
+
+
+
+
+  <!-- Reading Section BEFORE footer -->
+  <div class="container1">
+    <h2>Computer Science Reading Material</h2>
+
+    <p>Select a Topic To Read...</p>
+    <iframe src="readmaterial_cs.html" height="315" width="660" frameborder="1"></iframe>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+     <h1>Current IT Updates</h1>
+    <p>Latest technology & computer science news  </p>
+  </footer>
+
+  <!-- News Section AFTER footer -->
+  <div class="news-container">
+    <h2>Latest's Highlights</h2>
+    <div class="news-item active">💻 AI is transforming education with personalized learning tools.</div>
+    <div class="news-item">🌐 India emerges as a global hub for IT startups in 2025.</div>
+    <div class="news-item">🔐 Cybersecurity remains the top priority for all enterprises.</div>
+    <div class="news-item">🚀 Quantum computing research makes breakthrough progress.</div>
+    <div class="news-item">📱 New programming languages are gaining popularity in schools.</div>
+  </div>
+
+  <script>
+    let index = 0;
+    const newsItems = document.querySelectorAll('.news-item');
+
+    function showNextNews() {
+      newsItems[index].classList.remove('active');
+      index = (index + 1) % newsItems.length;
+      newsItems[index].classList.add('active');
+    }
+
+    setInterval(showNextNews, 4000); // change every 4 sec
+  </script>
+
+</body>
+</html>

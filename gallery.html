@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery & Media</title>
+  <link rel="stylesheet" href="style.css">
+
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+
+    header {
+      background: #2c3e50;      
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+
+footer {
+  background: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+
+
+
+
+
+    h2 {
+      text-align: center;
+      margin: 30px 0 20px;
+    }
+
+    /* Gallery Section */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      padding: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Video Section */
+    .videos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .videos iframe {
+      width: 100%;
+      height: 200px;
+      border-radius: 10px;
+    }
+
+    /* Animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 1s ease-in-out;
+    }
+
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Gallery & Media</h1>
+<img src="uploads/prog.gif" alt="Computer man" style="width:42px;height:42px;">
+
+<nav>
+   <a href="index.html">Home</a>
+  <a href="courses.html">Courses</a>
+  <a href="about_ict.html">About Computer    Science</a>
+  <a href="itnewsandupdate.html">It News and Update</a>
+  <a href="gallery.html">Gallery and Media</a>
+  <a href="about_us.html">About us</a>
+  <a href="contact.html">Contact</a>
+  <a href="register.html">Register</a>
+  <a href="teacher_group.html">Meet Our Teachers</a>
+  <a href="faqchatbot.html">FAQ ChatBot</a>
+</nav>
+
+  </header>
+
+  <!-- Gallery Section -->
+  <section>
+    <h2>Photo Gallery</h2>
+    
+    <div class="gallery fade-in">
+      <img src="uploads/programming.jpg" alt="Classes">
+      <img src="uploads/workshop.webp" alt="Workshop">
+      <img src="uploads/cs_lab.webp" alt="Lab">
+      <img src="uploads/cs_project.jpg" alt="Project">
+      <img src="uploads/cs_comptition.webp" alt="Competition">
+    </div>
+  </section>
+
+  <!-- Videos Section -->
+  <section>
+    <h2>Videos from Our YouTube Channel</h2>
+    <div class="videos fade-in">
+      <iframe src="https://www.youtube.com/embed/G4dWycWKHL0?si=k18Be95-s71lI5Tl"  allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/watch?v=Wchru8alhaE?si=YxnuZ2BP3OhUTVQD"  allowfullscreen></iframe>
+
+      <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <script>
+    // Scroll Animation
+    const elements = document.querySelectorAll('.fade-in');
+    const onScroll = () => {
+      elements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 50) {
+          el.classList.add('show');
+        }
+      });
+    };
+    window.addEventListener('scroll', onScroll);
+    onScroll();
+  </script>
+
+
+
+<footer>
+  <p>© 2025 Edunextgen Computer Classes | Contact:91-9711401639 | edunextgen991@gmail.com</p>
+</footer>
+
+
+</body>
+</html>

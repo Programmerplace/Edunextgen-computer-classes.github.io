@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - My Computer Classes</title>
+  <link rel="stylesheet" href="style.css">
+
+<style>
+    body { font-family: Arial, sans-serif; background: #f4f4f4; }
+    .chat-container { width: 400px; margin: 50px auto; background: white; padding: 20px; border-radius: 15px; box-shadow: 0 0 15px rgba(0,0,0,0.2); }
+    .chat-box { height: 300px; overflow-y: auto; border: 1px solid #ddd; padding: 10px; border-radius: 10px; background: #fafafa; margin-bottom: 15px; }
+    .message { margin: 10px 0; max-width: 80%; padding: 10px; border-radius: 15px; }
+    .user { background: #007bff; color: white; margin-left: auto; text-align: right; }
+    .bot { background: #e9ecef; color: black; margin-right: auto; text-align: left; }
+    select, button { padding: 10px; border-radius: 5px; margin-top: 10px; width: 100%; }
+    button { border: none; background: #28a745; color: white; cursor: pointer; }
+    button:hover { background: #218838; }
+  </style>
+
+</head>
+<body>
+
+<header>
+  <h1>FAQ Chatboat</h1>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="courses.html">Courses</a>
+  <a href="about_ict.html">About Computer    Science</a>
+  <a href="itnewsandupdate.html">It News and Update</a>
+  <a href="gallery.html">Gallery and Media</a>
+  <a href="about_us.html">About us</a>
+  <a href="contact.html">Contact</a>
+  <a href="register.html">Register</a>
+  <a href="teacher_group.html">Meet Our Teachers</a>
+  <a href="faqchatbot.html">FAQ ChatBot</a>
+  
+
+</nav>
+
+<div class="chat-container">
+    <h2>FAQ Chatbot</h2>
+    <div class="chat-box" id="chat-box">
+      <div class="message bot">👋 Hello! Please select a question below.</div>
+    </div>
+
+    <!-- Dropdown of predefined questions -->
+    <select id="question-list">
+      <option value="">-- Select a Question --</option>
+      <option value="courses">What courses do you offer?</option>
+      <option value="fees">What are the fees?</option>
+      <option value="timings">What are the class timings?</option>
+      <option value="register">How can I register?</option>
+      <option value="location">Where is the institute located?</option>
+      <option value="contact">How can I contact you?</option>
+      <option value="online">Do you provide online classes?</option>
+      <option value="certification">Do you offer certifications?</option>
+    </select>
+    <button onclick="getAnswer()">Ask</button>
+  </div>
+
+  <script>
+    const chatBox = document.getElementById("chat-box");
+
+    // Predefined answers
+    const responses = {
+      "courses": "📘 We offer courses from Class 3rd to 12th (all boards) and professional computer courses like Python, Web Development, and Cybersecurity.",
+      "fees": "💰 Our fees start from ₹1500 per month depending on the course.",
+      "timings": "🕒 Classes are available from 10 AM to 6 PM, Monday to Saturday.",
+      "register": "📝 You can register online using our registration form on the website.",
+      "location": "📍 Our institute is located in [Your City/Address].",
+      "contact": "📞 You can contact us at +91-9711401639 or email us at edunextgen991@gmail.com.",
+      "online": "🌐 Yes, we provide online classes for students across India.",
+      "certification": "🏅 Yes, we provide certifications after successful completion of each course."
+    };
+
+    function getAnswer() {
+      const questionSelect = document.getElementById("question-list");
+      const questionKey = questionSelect.value;
+
+      if (questionKey === "") return;
+
+      const questionText = questionSelect.selectedOptions[0].text;
+      const answer = responses[questionKey];
+
+      // Show user question bubble
+      chatBox.innerHTML += `<div class="message user">${questionText}</div>`;
+
+      // Show bot answer bubble
+      chatBox.innerHTML += `<div class="message bot">${answer}</div>`;
+
+      // Auto-scroll to bottom
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+  </script>
+
+
+
+
+
+
+
+
+<section>
+  <h2>Get in Touch</h2>
+  <h2>send your query to...</h2>
+
+  
+  <p>Whatsup://91-9711401639</p>
+  <p>Email: Edunextgen991@gmail.com</p>
+  <!--<p>WhatsApp: <a href="https://web.whatsapp.com/91 9711401639" target="_blank">Click Here</a></p>-->
+</section>
+
+<footer>
+  <p>© 2025 Edunextgen Computer Classes</p>
+</footer>
+
+</body>
+</html>
+
+
+
+

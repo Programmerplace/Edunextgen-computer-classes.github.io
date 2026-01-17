@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Computer Science Reading Material</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    /* Header */
+    header {
+      background: #2c3e50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 { margin: 0; }
+
+    /* Dropdown */
+    .dropdown-container {
+      text-align: center;
+      margin: 20px;
+    }
+    select {
+      padding: 10px 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    /* Content Box */
+    .content-box {
+      max-width: 850px;
+      margin: 20px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      display: none;
+      animation: fadeIn 0.6s ease;
+    }
+
+    .content-box.active { display: block; }
+
+    .content-inner {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .content-inner img {
+      max-width: 300px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .content-inner div {
+      flex: 1;
+    }
+
+    h3 {
+      color: #2c3e50;
+      margin-top: 0;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    /* Footer */
+    footer {
+      background: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+<!--
+  <header>
+    <h1>Computer Science Reading Material</h1>
+    <p>Select a topic to read</p>
+  </header>
+-->
+
+  <!-- Dropdown -->
+  <div class="dropdown-container">
+    <select id="topicDropdown">
+      <option value="">-- Choose a Topic --</option>
+      <option value="history">History of Computers</option>
+      <option value="programming">Programming Languages</option>
+      <option value="ai">Artificial Intelligence</option>
+      <option value="networking">Networking Basics</option>
+    </select>
+  </div>
+
+  <!-- Content Sections -->
+  <div id="history" class="content-box">
+    <div class="content-inner">
+      <div>
+        <h3>History of Computers</h3>
+        <p>From the Abacus to Supercomputers, the journey of computers has transformed human life. Early mechanical devices gave way to electronic computers that now power AI and space research.</p>
+      </div>
+      <img src="uploads/history.webp" alt="History of Computers">
+    </div>
+  </div>
+
+  <div id="programming" class="content-box">
+    <div class="content-inner">
+      <div>
+        <h3>Programming Languages</h3>
+        <p>Programming languages like Python, Java, and C++ are the backbone of the digital world. They allow humans to communicate with machines effectively.</p>
+      </div>
+      <img src="uploads/programming2.gif" alt="Programming Languages">
+    </div>
+  </div>
+
+  <div id="ai" class="content-box">
+    <div class="content-inner">
+      <div>
+        <h3>Artificial Intelligence</h3>
+        <p>Artificial Intelligence (AI) enables computers to mimic human intelligence. From chatbots to self-driving cars, AI is shaping the future of technology.</p>
+      </div>
+      <img src="uploads/ai.jpeg" alt="Artificial Intelligence">
+    </div>
+  </div>
+
+  <div id="networking" class="content-box">
+    <div class="content-inner">
+      <div>
+        <h3>Networking Basics</h3>
+        <p>Networking connects computers and devices, allowing data sharing across the world. The Internet is the biggest example of a network.</p>
+      </div>
+      <img src="uploads/networking.jpg" alt="Networking Basics">
+    </div>
+  </div>
+<!--
+  <footer>
+    <p>&copy; 2025 Computer Classes | Reading Section</p>
+  </footer>
+-->
+  <script>
+    const dropdown = document.getElementById("topicDropdown");
+    const contentBoxes = document.querySelectorAll(".content-box");
+
+    dropdown.addEventListener("change", () => {
+      contentBoxes.forEach(box => box.classList.remove("active"));
+      const selected = document.getElementById(dropdown.value);
+      if (selected) selected.classList.add("active");
+    });
+  </script>
+
+</body>
+</html>

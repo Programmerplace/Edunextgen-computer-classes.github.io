@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Computer Science </title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+ 
+.content-box {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 20px;
+  background: white; /* colorful gradient */
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  color: #2c3e50;
+  animation: fadeIn 0.5s ease;
+}
+
+.content-box h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.content-box p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.content-inner {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap; /* makes it mobile friendly */
+}
+
+.content-inner img {
+  max-width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+
+    .video-box {
+      margin-top: 30px;
+      text-align: center;
+    }
+    select {
+      padding: 10px 15px;
+      font-size: 16px;
+      margin: 20px 0;
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>About Computer Science and Information Technology</h1>
+    
+<nav>
+   <a href="index.html">Home</a>
+  <a href="courses.html">Courses</a>
+  <a href="about_ict.html">About Computer    Science</a>
+  <a href="itnewsandupdate.html">It News and Update</a>
+  <a href="gallery.html">Gallery and Media</a>
+  <a href="about_us.html">About us</a>
+  <a href="contact.html">Contact</a>
+  <a href="register.html">Register</a>
+  <a href="teacher_group.html">Meet Our Teachers</a>
+  <a href="faqchatbot.html">FAQ ChatBot</a>
+ 
+</nav>
+  </header>
+
+  <section>
+    <h2>Select a Topic</h2>
+    <select id="topicSelect" onchange="showTopic()">
+      <option value="">-- Choose a Topic --</option>
+      <option value="intro">Introduction</option>
+      <option value="history">History of Computers</option>
+      <option value="hardware">Hardware & Software</option>
+      <option value="programming">Programming Languages</option>
+      <option value="database">Data & Databases</option>
+      <option value="emerging">Emerging Fields</option>
+    </select>
+
+    <div id="topicContent" class="content-box">
+      <p>Please select a topic to read details.</p>
+    </div>
+  </section>
+
+  <section class="video-box">
+    <h2>Watch a Video</h2>
+    <video controls width="500">
+      <source src="uploads/Python Programming( Datatypes).mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </section>
+
+  <footer>
+    <p>© 2025 Edunextgen Computer Classes | Contact:91-9711401639 | edunextgen991@gmail.com</p>
+
+  </footer>
+
+  <script>
+    function showTopic() {
+      const select = document.getElementById("topicSelect").value;
+      const content = document.getElementById("topicContent");
+
+      let html = "";
+
+      if (select === "intro") {
+        html = `
+          <h3>Introduction to Computer Science</h3>
+          <p>Computer Science is the study of computers, algorithms, and problem solving using technology.</p>
+          <img src="uploads/cs_intro.webp" alt="Introduction">
+        `;
+      } 
+      else if (select === "history") {
+        html = `
+          <h3>History of Computers</h3>
+          <p>From the Abacus to Supercomputers, the journey of computers has transformed human life.</p>
+          <img src="uploads/hist.webp" alt="History of Computers">
+        `;
+      }
+      else if (select === "hardware") {
+        html = `
+          <h3>Hardware & Software</h3>
+          <p><b>Hardware</b> are physical parts like CPU, Monitor. <b>Software</b> are programs that run on hardware.</p>
+          <img src="uploads/hard_soft.jpeg" alt="Computer Hardware">
+        `;
+      }
+      else if (select === "programming") {
+        html = `
+          <h3>Programming Languages</h3>
+          <p>Programming languages like Python, Java, and C++ allow us to instruct computers to perform tasks.</p>
+          <img src="uploads/programming_info.jpg" alt="Programming">
+        `;
+      }
+      else if (select === "database") {
+        html = `
+          <h3>Data & Databases</h3>
+          <p>Data is information. Databases store and organize this information efficiently using SQL.</p>
+          <img src="uploads/database.jpg" alt="Database">
+        `;
+      }
+      else if (select === "emerging") {
+        html = `
+          <h3>Emerging Fields</h3>
+          <p>Artificial Intelligence, Cybersecurity, and Cloud Computing are shaping the future of technology.</p>
+          <img src="uploads/emerging.jpg" alt="Emerging Tech">
+        `;
+      }
+      else {
+        html = "<p>Please select a topic to read details.</p>";
+      }
+
+      content.innerHTML = html;
+    }
+  </script>
+</body>
+</html>
